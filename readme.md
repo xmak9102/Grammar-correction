@@ -37,7 +37,7 @@ Dataset in our case all have been preprocess
     python utils/preprocess_data.py -s SOURCE -t TARGET -o OUTPUT_FILE
     ```
 *Generate edits from shell (edit shell file according to your data path):
-    ```bash
+    ```
     bash scripts/prepare_data.sh
     ```
 
