@@ -48,11 +48,8 @@ Dataset in our case all have been preprocess
    bash scripts/train_2.sh
    ```
 *Edit shell file according to your path
-## Inference
+## Model inference
 - Edit deepspeed_config.json according to your config params
     ```bash
     bash scripts/predict.sh
     ```
-
-## Known Issues
-- In distributed training (num gpu > 1), enable AMP with O1 state may raise ZeroDivision Error, which may be caused by apex, see APEX's github issues for help. Or, you can try a smaller lr to see if the error disappears.
