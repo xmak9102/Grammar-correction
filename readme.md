@@ -40,6 +40,38 @@ Dataset in our case all have been preprocess
     ```
     bash scripts/prepare_data.sh
     ```
+    
+## Pretrained models
+<table>
+  <tr>
+    <th>Pretrained encoder</th>
+    <th>Confidence bias</th>
+    <th>Min error prob</th>
+    <th>CoNNL-2014 (test)</th>
+    <th>BEA-2019 (test)</th>
+  </tr>
+  <tr>
+    <td>BERT <a href="https://grammarly-nlp-data-public.s3.amazonaws.com/gector/bert_0_gectorv2.th">[link]</a></td>
+    <td>0.1</td>
+    <td>0.41</td>
+    <td>61.0</td>
+    <td>68.0</td>
+  </tr>
+  <tr>
+    <td>RoBERTa <a href="https://grammarly-nlp-data-public.s3.amazonaws.com/gector/roberta_1_gectorv2.th">[link]</a></td>
+    <td>0.2</td>
+    <td>0.5</td>
+    <td>64.0</td>
+    <td>71.8</td>
+  </tr>
+  <tr>
+    <td>XLNet <a href="https://grammarly-nlp-data-public.s3.amazonaws.com/gector/xlnet_0_gectorv2.th">[link]</a></td>
+    <td>0.2</td>
+    <td>0.5</td>
+    <td>63.2</td>
+    <td>71.2</td>
+  </tr>
+</table>
 
 ## Train Model
 - Edit deepspeed_config.json according to your config params. Note that lr and batch_size options will be overrided by args. And args.lr indicates batch_size (regardless how many gpus are used, which equals effective_batch_size_per_gpu * num_gpus) * num accumulation steps. See more details at src/trainer.py.
