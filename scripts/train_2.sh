@@ -22,7 +22,7 @@ run_cmd="deepspeed --include localhost:0 --master_port 42997 train.py \
     --config_path $config_path \
     --num_epochs 20 \
     --max_len 256 \
-    --train_batch_size 256 \
+    --train_batch_size 32 \
     --accumulation_size 1 \
     --valid_batch_size 256 \
     --cold_step_count 0 \
