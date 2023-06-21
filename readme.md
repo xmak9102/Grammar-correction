@@ -37,12 +37,13 @@ Dataset in our case all have been preprocess
     python utils/preprocess_data.py -s SOURCE -t TARGET -o OUTPUT_FILE
     ```
 *Generate edits from shell (edit shell file according to your data path):
-    ```bash
+    ```
     bash scripts/prepare_data.sh
     ```
 
 ## Train Model
 - Edit deepspeed_config.json according to your config params. Note that lr and batch_size options will be overrided by args. And args.lr indicates batch_size (regardless how many gpus are used, which equals effective_batch_size_per_gpu * num_gpus) * num accumulation steps. See more details at src/trainer.py.
+
    ```bash
    bash scripts/train.sh
    ```
