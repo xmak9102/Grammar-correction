@@ -45,9 +45,9 @@ Dataset in our case all have been preprocess
 - Edit deepspeed_config.json according to your config params. Note that lr and batch_size options will be overrided by args. And args.lr indicates batch_size (regardless how many gpus are used, which equals effective_batch_size_per_gpu * num_gpus) * num accumulation steps. See more details at src/trainer.py.
 
    ```bash
-   bash scripts/train.sh
+   bash scripts/train_2.sh
    ```
-
+*Edit shell file according to your path
 ## Inference
 - Edit deepspeed_config.json according to your config params
     ```bash
