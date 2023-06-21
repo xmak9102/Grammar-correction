@@ -85,3 +85,5 @@ Dataset in our case all have been preprocess
     ```bash
     bash scripts/predict.sh
     ```
+
+For evaluation use [M^2Scorer](https://github.com/nusnlp/m2scorer) and [ERRANT](https://github.com/chrisjbryant/errant).
