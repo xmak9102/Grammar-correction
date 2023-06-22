@@ -9,7 +9,7 @@ valid_path="${data_dir}/test-stage1.edits"
 config_path="configs/ds_config_basic.json"
 timestamp=`date "+%Y%0m%0d_%T"`
 save_dir="../ckpts/ckpt_$timestamp"
-pretrained_transformer_path="${base_dir}/hfl/chinese-electra-180g-large-discriminator"
+pretrained_transformer_path="xlm-roberta-base"
 mkdir -p $save_dir
 cp $0 $save_dir
 cp $config_path $save_dir
