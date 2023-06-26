@@ -1,5 +1,5 @@
 #!/bin/bash
-base_dir="/home/username/workspace"
+base_dir="." #your workspace 'home/user/workspace'
 mkdir result
 deepspeed --include localhost:0 --master_port 42991 predict.py \
     --batch_size 256 \
@@ -10,14 +10,14 @@ deepspeed --include localhost:0 --master_port 42991 predict.py \
     --additional_confidence 0.0 \
     --sub_token_mode "average" \
     --max_pieces_per_token 5 \
-    --model_dir $1 \
+    --model_dir "Grammar-correction" \
     --ckpt_id "epoch-5" \
-    --deepspeed_config "./deepspeed_config.json" \
+    --deepspeed_config "./configs/ds_config_zero1.json" \
     --detect_vocab_path "./data/vocabulary/d_tags.txt" \
     --correct_vocab_path "./data/vocabulary/labels.txt" \
-    --pretrained_transformer_path "${base_dir}/chinese-roberta-wwm-ext-large" \
-    --input_path "${base_dir}/data/track3/yaclc-minimal_testA.src" \
-    --out_path "result/yaclc-minimal_testA.preds" \
+    --pretrained_transformer_path "roberta-base" \
+    --input_path "${base_dir}/data/input.txt" \
+    --out_path "result/output.txt" \
     --special_tokens_fix 1 \
     --detokenize 1 \
     --amp
